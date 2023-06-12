@@ -4,9 +4,7 @@ import { Helmet } from 'react-helmet-async';
 function Register() {
   return (
     <div>
-      <Helmet>
-        <title>Registration</title>
-      </Helmet>
+      <title>Registration</title>
       <RegisterForm />
     </div>
   );
