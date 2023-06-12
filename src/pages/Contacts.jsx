@@ -1,4 +1,3 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Filter from 'components/Contacts/Filter/Filter';
 import Form from 'components/Contacts/Form/Form';
 import { useDispatch } from 'react-redux';
@@ -14,14 +13,10 @@ function Contacts() {
   }, [dispatch]);
   return (
     <>
-      <HelmetProvider>
-        <Helmet>
-          <title>Your contacts</title>
-        </Helmet>
-        <Form />
-        <Filter />
-        <ListContacts />
-      </HelmetProvider>
+      <title>Your contacts</title>
+      <Form />
+      <Filter />
+      <ListContacts />
     </>
   );
 }
