@@ -6,12 +6,10 @@ import { AppBars } from '../AppBar/AppBar';
 const Layout = () => {
   return (
     <div>
-      <>
-        <AppBars />
-        <Suspense fallback={<div>Loading...</div>}>
-          <Outlet />
-        </Suspense>
-      </>
+      <AppBars />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };

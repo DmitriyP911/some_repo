@@ -3,7 +3,7 @@ import LoginForm from 'components/LoginForm/LoginForm';
 function Login() {
   return (
     <div>
-      <title>Log in</title>
+      <h2>Log in</h2>
       <LoginForm />
     </div>
   );

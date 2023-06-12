@@ -28,19 +28,15 @@ export function App() {
         <Route index element={<Home />} />
         <Route
           path="/login"
-          element={<PublicRoute redirectTo="/contacts" component={<Login />} />}
+          element={<PublicRoute redirectTo="/contacts" component={Login} />}
         />
         <Route
           path="/register"
-          element={
-            <PublicRoute redirectTo="/contacts" component={<Register />} />
-          }
+          element={<PublicRoute redirectTo="/contacts" component={Register} />}
         />
         <Route
           path="/contacts"
-          element={
-            <PrivateRoute redirectTo="/login" component={<Contacts />} />
-          }
+          element={<PrivateRoute redirectTo="/login" component={Contacts} />}
         />
         {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
       </Route>

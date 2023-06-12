@@ -13,7 +13,7 @@ function Contacts() {
   }, [dispatch]);
   return (
     <>
-      <title>Your contacts</title>
+      <h2>Your contacts</h2>
       <Form />
       <Filter />
       <ListContacts />
