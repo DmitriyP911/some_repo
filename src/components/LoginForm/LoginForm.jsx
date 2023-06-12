@@ -45,6 +45,7 @@ function LoginForm() {
           name="email"
           value={email}
           onChange={handleChange}
+          autoComplete="false"
         />
       </Label>
       <Label>
@@ -54,6 +55,7 @@ function LoginForm() {
           name="password"
           value={password}
           onChange={handleChange}
+          autoComplete="false"
         />
       </Label>
       <Button variant="outlined" type="submit">

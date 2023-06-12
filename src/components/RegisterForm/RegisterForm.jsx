@@ -55,6 +55,7 @@ function RegisterForm() {
           name="email"
           value={email}
           onChange={handleChange}
+          autoComplete="false"
         />
       </Label>
       <Label>
@@ -64,6 +65,7 @@ function RegisterForm() {
           name="password"
           value={password}
           onChange={handleChange}
+          autoComplete="false"
         />
       </Label>
       <Buttons variant="outlined" type="submit">
