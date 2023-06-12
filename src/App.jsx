@@ -5,8 +5,8 @@ import Layout from 'components/Layout/Layout';
 // import NotFoundPage from 'pages/NotFoundPages';
 import { authOperations } from 'redux/auth';
 import { getRefresh } from 'redux/Selectors';
-import PublicRoute from 'PublicRoute';
-import PrivateRoute from 'PrivateRoute';
+import PublicRoute from './PublicRoute';
+import PrivateRoute from './PrivateRoute';
 
 const Home = lazy(() => import('./pages/Home'));
 const Contacts = lazy(() => import('./pages/Contacts'));
@@ -27,18 +27,21 @@ export function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route
-          path="/login"
-          element={<PublicRoute redirectTo="/contacts" component={Login} />}
+          path="/register"
+          element={
+            <PublicRoute redirectTo="/contacts" component={<Register />} />
+          }
         />
         <Route
-          path="/register"
-          element={<PublicRoute redirectTo="/contacts" component={Register} />}
+          path="/login"
+          element={<PublicRoute redirectTo="/contacts" component={<Login />} />}
         />
         <Route
           path="/contacts"
-          element={<PrivateRoute redirectTo="/login" component={Contacts} />}
+          element={
+            <PrivateRoute redirectTo="/login" component={<Contacts />} />
+          }
         />
-        {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
       </Route>
     </Routes>
   );

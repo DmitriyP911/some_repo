@@ -10,6 +10,6 @@ export default function PrivateRoute({
   return !isLoggedIn && !isRefreshing ? (
     <Navigate to={redirectTo} />
   ) : (
-    <Component />
+    Component
   );
 }
