@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, lazy } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import Layout from 'components/Layout/Layout';
 // import NotFoundPage from 'pages/NotFoundPages';
 import { authOperations } from 'redux/auth';
@@ -23,26 +23,30 @@ export function App() {
   return isRefresing ? (
     <h1>Refreshing user...</h1>
   ) : (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route
-          path="/register"
-          element={
-            <PublicRoute redirectTo="/contacts" component={<Register />} />
-          }
-        />
-        <Route
-          path="/login"
-          element={<PublicRoute redirectTo="/contacts" component={<Login />} />}
-        />
-        <Route
-          path="/contacts"
-          element={
-            <PrivateRoute redirectTo="/login" component={<Contacts />} />
-          }
-        />
-      </Route>
-    </Routes>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route
+            path="register"
+            element={
+              <PublicRoute redirectTo="/contacts" component={<Register />} />
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <PublicRoute redirectTo="/contacts" component={<Login />} />
+            }
+          />
+          <Route
+            path="contacts"
+            element={
+              <PrivateRoute redirectTo="/login" component={<Contacts />} />
+            }
+          />
+        </Route>
+      </Routes>
+    </Suspense>
   );
 }
