@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Outlet } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -16,6 +17,7 @@ function Home() {
   return (
     <Container>
       <Title>Welcome to my PhoneBook!</Title>
+      <Outlet />
     </Container>
   );
 }
