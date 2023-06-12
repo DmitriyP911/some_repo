@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, lazy, Suspense } from 'react';
+import { useEffect } from 'react';
 import Layout from 'components/Layout/Layout';
 // import NotFoundPage from 'pages/NotFoundPages';
 import { authOperations } from 'redux/auth';
