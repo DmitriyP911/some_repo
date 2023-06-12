@@ -1,16 +1,14 @@
 import RegisterForm from 'components/RegisterForm/RegisterForm';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 
 function Register() {
   return (
-    <HelmetProvider>
-      <div>
-        <Helmet>
-          <title>Registration</title>
-        </Helmet>
-        <RegisterForm />
-      </div>
-    </HelmetProvider>
+    <div>
+      <Helmet>
+        <title>Registration</title>
+      </Helmet>
+      <RegisterForm />
+    </div>
   );
 }
 export default Register;
