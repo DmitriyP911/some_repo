@@ -23,7 +23,7 @@ export function App() {
   return isRefresing ? (
     <h1>Refreshing user...</h1>
   ) : (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={null}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
